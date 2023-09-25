@@ -11,7 +11,7 @@ from kivy.clock import Clock
 class container(AnchorLayout):
     def __init__(self, **kwargs):
         super(container,self).__init__(**kwargs)
-        self.start = 0
+        self.start = 20
         self.anchor_x = 'center'
         self.anchor_y = 'center'
         self.size_hint = (1, 1)
