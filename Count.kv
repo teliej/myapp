@@ -1,0 +1,51 @@
+container:
+
+
+<Ringwidget@Widget>:
+    colors: 1,1,1,1
+    angle: 90
+    size_hint: 1,1
+    pos_hint: {"center_x": .5, "center_y": .5}
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            axis: 0,0,1
+            origin: self.center
+        Color:
+            rgba: self.colors
+        Line:
+            width: 1.5
+            ellipse: self.x,self.y,self.width,self.height,10,300
+    canvas.after:
+        PopMatrix
+
+<container>:
+    FloatLayout:
+        size_hint: None,None
+        #size: min(self.size), min(self.size)
+        size: root.sizing
+        Label:
+            id: target
+            text: f'{root.start}'
+            size_hint: 1,1
+            pos_hint: {"center_x": .5, "center_y": .5}
+            font_size: .5*min(self.size)
+            text_size: self.size
+            valign: 'center'
+            halign: 'center'
+        Ringwidget:
+            id: ring1
+            size_hint: 1,1
+            colors:(1,0,1,1)
+            angle:20
+        Ringwidget:
+            id: ring2
+            size_hint: .9,.9
+            colors: (1,1,0,1)
+            angle:10
+        Ringwidget:
+            id: ring3
+            size_hint: .8,.8
+            colors: (.5,1,.5,1)
+            angle:180
