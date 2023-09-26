@@ -21,6 +21,12 @@ container:
         PopMatrix
 
 <container>:
+    canvas.before:
+        Color:
+            rgba: 1,0,1,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
     FloatLayout:
         size_hint: None,None
         #size: min(self.size), min(self.size)
